@@ -117,28 +117,28 @@ const [dame,setDame]=useState(0)
               console.log(55)
               setDame((prev)=>prev+1)
 
-            }   
+            }
           }
         }
       }
     }},[])
-  
+
   let tobasu=0
   return (
     <>
-    <div>{dame}</div>
+    {/* <div>{dame}</div> */}
     <div>{numArrayRandomMap}</div>
         <svg width={imageSize*5} height={imageSize*5}>
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}/>
-  
+
   {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu]==6 || numArrayRandom[index+tobasu]==8){ return (<text x={Number(sigenCoordinate[index][0])+imageSize/2}y={Number(sigenCoordinate[index][1])+imageSize/2}style={{fill:'red'}} >{numArrayRandom[index+tobasu]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])+imageSize/2}y={Number(sigenCoordinate[index][1])+imageSize/2}style={{fill:'black'}} >{numArrayRandom[index+tobasu]}</text>)}}} else{tobasu=-1}})()}
-  
+
   </>})}
 
   </svg>
-  
 
-  
+
+
     <div>
       レンガBrick
     </div>

@@ -10,6 +10,16 @@ import img5 from './images/Wool.svg';//羊
 import img6 from './images/Nothing.svg'//砂漠
 import img7 from './images/sea.svg'//海
 import img8 from './images/Gold.svg'//砂金
+import img1png from './images/Brick.png'
+import img2png from './images/Lumber.png'
+import img3png from './images/Ore.png'
+import img4png from './images/Grain.png'
+import img5png from './images/Wool.png'
+import img6png from './images/Nothing.png'
+import img7png from './images/sea.png'
+import img8png from './images/Gold.png'
+
+
 import { dirname } from 'path';
 import { arrayBuffer } from 'stream/consumers';
 console.log('hei')
@@ -314,7 +324,27 @@ let dame_num=1
   let tobasu3=0
   return (
     <>
-    <div>{'catan'}</div>
+    <div>{'資源と色の組み合わせ'}</div>
+    <div>
+      レンガBrick
+      <img src={img1png}></img>
+
+
+      木Lumber<img src={img2png}></img>
+
+      鉄Ore<img src={img3png}></img>
+
+      麦Grain<img src={img4png}></img>
+
+      羊Wool<img src={img5png}></img>
+
+  砂漠Nothing<img src={img6png}></img>
+  海Sea<img src={img7png}></img>
+  砂金Gold<img src={img8png}></img>
+
+
+    </div>
+    <div>陸カタン</div>
     {/* <div>{numArrayRandom}</div>
     <div>{numArrayRandom3}</div> */}
 
@@ -326,7 +356,7 @@ let dame_num=1
 
   </>})}
   </svg>
-
+  <div>海カタン</div>
   <svg width={imageSize*9} height={imageSize*7}>
 
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}/>
@@ -339,30 +369,6 @@ let dame_num=1
 </>})}
 
 </svg>
-    <div>
-      レンガBrick
-    </div>
-    <div>
-      木Lumber
-    </div>
-    <div>
-      鉄Ore
-    </div>
-    <div>
-      麦Grain
-    </div>
-    <div>
-      羊Wool
-    </div>
-<div>
-  砂漠Nothing
-</div>
-<div>
-  砂金Gold
-</div>
-    <div>
-      海Sea
-    </div>
     </>
   );
 }

@@ -22,7 +22,7 @@ import img8png from './images/Gold.png'
 
 import { dirname } from 'path';
 import { arrayBuffer } from 'stream/consumers';
-console.log('hei')
+// console.log('hei')
 const svgList=[img1,img2,img3,img4,img5,img6,img7,img8]
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -31,12 +31,21 @@ const shuffle = ([...array]) => {
   }
   return array;
 }
+console.log(window[1])
+console.log(window[0])
+console.log(window.window.innerWidth)
+console.log(window.window.innerHeight)
+console.log(window.innerHeight)
+
 const sigen_num=[3,4,3,4,4,1]//Brick,Lumber,Ore,Grain,Wool,Nothing
 const sigen: number[] = [];
 const sigenCoordinate=new Array(19)
 const mapNum=[3,4,5,4,3]
 // alert(sigenCoordinate)
-const imageSize=100
+const imageSize_=100
+const imageSize=100+Math.floor(((window.innerWidth)-(100*8))/8)
+// alert(window.innerWidth)
+// alert(imageSize)
 const haba=[imageSize,imageSize/2,0,imageSize/2,imageSize]
 let count=0
 for (let i=0;i<mapNum.length;i++){
@@ -114,6 +123,18 @@ const sigenRandom3Check=[[[[1]]],[[[2]]],[[[3]]],[[[4],[5]]],[[[5],[6]]],[[[6],[
 
 
 export const App=()=> {
+// alert(window[1])
+// console.log(window[1])
+// console.log(window[0])
+// console.log(window.window.innerWidth)
+// console.log(window.window.innerHeight)
+// console.log(window.innerHeight)
+
+
+
+
+
+// window.addEventListener('resize', updateSize);
 const [dame,setDame]=useState(0)
 let dame_num=1
   // console.log('start')
@@ -148,7 +169,7 @@ let dame_num=1
     count=0
     // console.log(i)
     for(let j=0;j<mapNum[i];j++){
-      console.log(numArrayRandomMap[i][j])
+      // console.log(numArrayRandomMap[i][j])
       if(numArrayRandomMap[i][j]==6||numArrayRandomMap[i][j]==8){//6か8のとき，隣り合わせチェックが必要なとき
         if(i<Math.floor(mapNum.length/2)){//半分より上のとき
           if(j==mapNum[i]-1){//一番右を見ているとき
@@ -156,19 +177,19 @@ let dame_num=1
           }
           else{//一番右以外を見ているとき，隣に数字が有るとき
               if(numArrayRandomMap[i][j+1]==6||numArrayRandomMap[i][j+1]==8){ //同列の右を見る
-                console.log(111)
+                // console.log(111)
                 // setDame((prev)=>prev+1)
                 dame_num=dame_num+1
               }
           }
           if(numArrayRandomMap[i+1][j]==6||numArrayRandomMap[i+1][j]==8){//下の左を見る
-            console.log(222)
+            // console.log(222)
             // setDame((prev)=>prev+1)
             dame_num=dame_num+1
 
           }
           if(numArrayRandomMap[i+1][j+1]==6||numArrayRandomMap[i+1][j+1]==8){//下の右を見る
-            console.log(333)
+            // console.log(333)
             // setDame((prev)=>prev+1)
             dame_num=dame_num+1
 
@@ -176,7 +197,7 @@ let dame_num=1
         }
         else if(i==mapNum.length-1){//一番下のとき
           if(numArrayRandomMap[i][j+1]==6||numArrayRandomMap[i][j+1]==8){ //同列の右を見る
-            console.log(111)
+            // console.log(111)
             // setDame((prev)=>prev+1)
             dame_num=dame_num+1
 
@@ -185,36 +206,36 @@ let dame_num=1
         else{//半分より下のとき
           if(j==mapNum[i]-1){//一番右を見ているとき
             if(numArrayRandomMap[i+1][j-1]==6||numArrayRandomMap[i+1][j-1]==8){//下の左を見る
-              console.log(222)
+              // console.log(222)
               // setDame((prev)=>prev+1)
               dame_num=dame_num+1
             }
           }
           else if(j==0){
             if(numArrayRandomMap[i+1][j]==6||numArrayRandomMap[i+1][j]==8){//下の右を見る
-              console.log(333)
+              // console.log(333)
               // setDame((prev)=>prev+1)
               dame_num=dame_num+1
             }
             if(numArrayRandomMap[i][j+1]==6||numArrayRandomMap[i][j+1]==8){ //同列の右を見る
-              console.log(111)
+              // console.log(111)
                   // setDame((prev)=>prev+1)
                   dame_num=dame_num+1
                 }
           }
           else{
           if(numArrayRandomMap[i][j+1]==6||numArrayRandomMap[i][j+1]==8){ //同列の右を見る
-            console.log(111)
+            // console.log(111)
                 // setDame((prev)=>prev+1)
                 dame_num=dame_num+1
               }
               if(numArrayRandomMap[i+1][j-1]==6||numArrayRandomMap[i+1][j-1]==8){//下の左を見る
-                console.log(222)
+                // console.log(222)
                 // setDame((prev)=>prev+1)
                 dame_num=dame_num+1
               }
               if(numArrayRandomMap[i+1][j]==6||numArrayRandomMap[i+1][j]==8){//下の右を見る
-                console.log(333)
+                // console.log(333)
                 // setDame((prev)=>prev+1)
                 dame_num=dame_num+1
               }
@@ -233,18 +254,18 @@ let dame_num=1
   const islandGenerate=()=>{
     dame_num=1
     let sigenArrayRandom=shuffle(sigen3)
-    console.log('start')
+    // console.log('start')
     // console.log(sigenRandom3Check[0][0][0])
     // console.log(sigenArrayRandom[0])
     while(dame_num!=0){
       sigenArrayRandom=shuffle(sigen3)
       dame_num=0
       for(let i=0;i<sigen3.length-1;i++){
-        console.log('istart')
-        console.log(i)
+        // console.log('istart')
+        // console.log(i)
         for(let j=0;j<sigenRandom3Check[i][0].length;j++){
-          console.log(j)
-          console.log(sigenRandom3Check[i])
+          // console.log(j)
+          // console.log(sigenRandom3Check[i])
           if(sigenArrayRandom[i]==7){
             // console.log('a')
             // console.log(sigenRandom3Check[i][j][0])
@@ -262,8 +283,8 @@ let dame_num=1
   const func3=()=>{
     let dame_num=1
     let numArrayRandom3=shuffle(numArray3)
-    console.log(numArrayRandom3)
-    console.log('YYYYYYYYYYYYYYYYYYYY')
+    // console.log(numArrayRandom3)
+    // console.log('YYYYYYYYYYYYYYYYYYYY')
     while(dame_num!=0){
       dame_num=0
       let check=0
@@ -280,13 +301,13 @@ let dame_num=1
           num13[i]=-1
         }
       }
-      console.log(num13)
+      // console.log(num13)
       for(let i=0;i<sigen3.length-1;i++){
         if(sigenRandom3[i]==7){
           if(num13[i]==8 || num13[i]==6){
             dame_num=1+dame_num
-            console.log('aitu')
-            console.log(i)
+            // console.log('aitu')
+            // console.log(i)
           }
         }
         if(sigenRandom3[i]==6){
@@ -297,8 +318,8 @@ let dame_num=1
             if(num13[i]==6||num13[i]==8)
               if(num13[sigenRandom3Check[i][0][j][0]]==6||num13[sigenRandom3Check[i][0][j][0]]==8){
                 dame_num=1+dame_num
-                console.log('tonari')
-                console.log(i)
+                // console.log('tonari')
+                // console.log(i)
             }
           }
         }
@@ -306,7 +327,7 @@ let dame_num=1
       if(sigenRandom3[12]==7){
         if(num13[12]==6||num13[12]==8){
           dame_num=1+dame_num
-          console.log('saigo')
+          // console.log('saigo')
         }
       }
       // alert('jijiji')
@@ -350,21 +371,21 @@ let dame_num=1
 
         <svg width={imageSize*9} height={imageSize*7}>
 
-  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}/>
+  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>
 
-  {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu11]==6 || numArrayRandom[index+tobasu11]==8){ return (<text x={Number(sigenCoordinate[index][0])+imageSize/2}y={Number(sigenCoordinate[index][1])+imageSize/2}style={{fill:'red'}} >{numArrayRandom[index+tobasu11]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])+imageSize/2}y={Number(sigenCoordinate[index][1])+imageSize/2}style={{fill:'black'}} >{numArrayRandom[index+tobasu11]}</text>)}}} else{tobasu11=-1}})()}
+  {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu11]==6 || numArrayRandom[index+tobasu11]==8){ return (<text x={Number(sigenCoordinate[index][0])+imageSize/2}y={Number(sigenCoordinate[index][1])+imageSize/2}style={{fill:'red'}} width={imageSize} >{numArrayRandom[index+tobasu11]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])+imageSize/2}y={Number(sigenCoordinate[index][1])+imageSize/2}style={{fill:'black'}} >{numArrayRandom[index+tobasu11]}</text>)}}} else{tobasu11=-1}})()}
 
   </>})}
   </svg>
   <div>海カタン</div>
   <svg width={imageSize*9} height={imageSize*7}>
 
-  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}/>
+  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}/>
   {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu12]==6 || numArrayRandom[index+tobasu12]==8){ return (<text x={Number(sigenCoordinate1[index][0])+imageSize/2}y={Number(sigenCoordinate1[index][1])+imageSize/2}style={{fill:'red'}} >{numArrayRandom[index+tobasu12]}</text>)}else{{ return (<text x={Number(sigenCoordinate1[index][0])+imageSize/2}y={Number(sigenCoordinate1[index][1])+imageSize/2}style={{fill:'black'}} >{numArrayRandom[index+tobasu12]}</text>)}}} else{tobasu12=-1}})()}
 </>})}
-{sigenRandom2.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate2[index][0]}y={sigenCoordinate2[index][1]}/>
+{sigenRandom2.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate2[index][0]}y={sigenCoordinate2[index][1]}width={imageSize} height={imageSize}/>
 </>})}
-{sigenRandom3.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate3[index][0]}y={sigenCoordinate3[index][1]}/>
+{sigenRandom3.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate3[index][0]}y={sigenCoordinate3[index][1]}width={imageSize} height={imageSize}/>
 {(()=>{if(sigen!=6) {if(numArrayRandom3[index+tobasu3]==6 || numArrayRandom3[index+tobasu3]==8){ return (<text x={Number(sigenCoordinate3[index][0])+imageSize/2}y={Number(sigenCoordinate3[index][1])+imageSize/2}style={{fill:'red'}} >{numArrayRandom3[index+tobasu3]}</text>)}else{{ return (<text x={Number(sigenCoordinate3[index][0])+imageSize/2}y={Number(sigenCoordinate3[index][1])+imageSize/2}style={{fill:'black'}} >{numArrayRandom3[index+tobasu3]}</text>)}}} else{tobasu3=-1+tobasu3}})()}
 </>})}
 

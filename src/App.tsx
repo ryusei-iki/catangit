@@ -250,7 +250,6 @@ let dame_num=1
   }
   return numArrayRandom
   }
-  
   const islandGenerate=()=>{
     dame_num=1
     let sigenArrayRandom=shuffle(sigen3)
@@ -337,7 +336,15 @@ let dame_num=1
     }
     return numArrayRandom3
   }
-  let numArrayRandom3=func3()
+
+    // let numArrayRandom3=func3()
+let numArrayRandom3=func3()
+// let numArrayRandom3=func3()
+  const [loop,setLoop]=useState(0)
+  useEffect(()=>{
+    let numArrayRandom3=func3()
+  },[loop])
+  
   // const sigenRandom3=shuffle(sigen3)
   // console.log(sigenRandm3)
   let tobasu11=0
@@ -345,6 +352,7 @@ let dame_num=1
   let tobasu3=0
   return (
     <>
+    <button onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</button>
     <div>{'資源と色の組み合わせ'}</div>
     <div>
       レンガBrick

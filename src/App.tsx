@@ -43,7 +43,24 @@ const sigenCoordinate=new Array(19)
 const mapNum=[3,4,5,4,3]
 // alert(sigenCoordinate)
 const imageSize_=100
-const imageSize=100+Math.floor(((window.innerWidth)-(100*8))/8)
+function defineSize(): number {
+  if(window.innerWidth<window.innerHeight){
+  // alert('width')
+
+    return 100+Math.floor(((window.innerWidth)-(100*8))/8)
+  }
+  else if(window.innerHeight<window.innerWidth){
+    // alert('height')
+    return 100+Math.floor(((window.innerHeight)-(100*7))/7)
+
+  }
+
+  else{
+    // alert('a')
+    return 0
+  }
+}
+const imageSize=defineSize()
 // alert(window.innerWidth)
 // alert(imageSize)
 const haba=[imageSize,imageSize/2,0,imageSize/2,imageSize]

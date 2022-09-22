@@ -43,20 +43,30 @@ const sigenCoordinate=new Array(19)
 const mapNum=[3,4,5,4,3]
 // alert(sigenCoordinate)
 const imageSize_=100
-function defineSize(): number {
-  if(window.innerWidth<window.innerHeight){
-  // alert('width')
+// function defineSize(): number {
+//   if(window.innerWidth<window.innerHeight){
+//   // alert('width')
 
+//     return 100+Math.floor(((window.innerWidth)-(100*8))/8)
+//   }
+//   else if(window.innerHeight<window.innerWidth){
+//     // alert('height')
+//     return 100+Math.floor(((window.innerHeight)-(100*7))/7)
+//   }
+
+//   else{
+//     // alert('a')
+//     return 0
+//   }
+// }
+const defineSize=(): number=> {
+  if(window.innerWidth<window.innerHeight){
     return 100+Math.floor(((window.innerWidth)-(100*8))/8)
   }
   else if(window.innerHeight<window.innerWidth){
-    // alert('height')
     return 100+Math.floor(((window.innerHeight)-(100*7))/7)
-
   }
-
   else{
-    // alert('a')
     return 0
   }
 }
@@ -394,7 +404,7 @@ let numArrayRandom3=func3()
     {/* <div>{numArrayRandom}</div>
     <div>{numArrayRandom3}</div> */}
 
-        <svg width={imageSize*9} height={imageSize*7}>
+        <svg width={imageSize*5} height={imageSize*5}>
 
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>
 
@@ -403,7 +413,7 @@ let numArrayRandom3=func3()
   </>})}
   </svg>
   <div>海カタン</div>
-  <svg width={imageSize*9} height={imageSize*7}>
+  <svg width={imageSize*8} height={imageSize*7}>
 
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}/>
   {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu12]==6 || numArrayRandom[index+tobasu12]==8){ return (<text x={Number(sigenCoordinate1[index][0])}y={Number(sigenCoordinate1[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}} >{numArrayRandom[index+tobasu12]}</text>)}else{{ return (<text x={Number(sigenCoordinate1[index][0])}y={Number(sigenCoordinate1[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu12]}</text>)}}} else{tobasu12=-1}})()}

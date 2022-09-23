@@ -409,7 +409,7 @@ let numArrayRandom3=func3()
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>
 
   {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu11]==6 || numArrayRandom[index+tobasu11]==8){ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}}  >{numArrayRandom[index+tobasu11]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu11]}</text>)}}} else{tobasu11=-1}})()}
-
+{ <rect x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={5}/>}
   </>})}
   </svg>
   <div>海カタン</div>
@@ -417,11 +417,14 @@ let numArrayRandom3=func3()
 
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}/>
   {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu12]==6 || numArrayRandom[index+tobasu12]==8){ return (<text x={Number(sigenCoordinate1[index][0])}y={Number(sigenCoordinate1[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}} >{numArrayRandom[index+tobasu12]}</text>)}else{{ return (<text x={Number(sigenCoordinate1[index][0])}y={Number(sigenCoordinate1[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu12]}</text>)}}} else{tobasu12=-1}})()}
+  { <rect x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={5}/>}
 </>})}
 {sigenRandom2.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate2[index][0]}y={sigenCoordinate2[index][1]}width={imageSize} height={imageSize}/>
+{ <rect x={sigenCoordinate2[index][0]}y={sigenCoordinate2[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={5}/>}
 </>})}
 {sigenRandom3.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate3[index][0]}y={sigenCoordinate3[index][1]}width={imageSize} height={imageSize}/>
 {(()=>{if(sigen!=6) {if(numArrayRandom3[index+tobasu3]==6 || numArrayRandom3[index+tobasu3]==8){ return (<text x={Number(sigenCoordinate3[index][0])}y={Number(sigenCoordinate3[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}} >{numArrayRandom3[index+tobasu3]}</text>)}else{{ return (<text x={Number(sigenCoordinate3[index][0])}y={Number(sigenCoordinate3[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom3[index+tobasu3]}</text>)}}} else{tobasu3=-1+tobasu3}})()}
+{ <rect x={sigenCoordinate3[index][0]}y={sigenCoordinate3[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={5}/>}
 </>})}
 
 </svg>

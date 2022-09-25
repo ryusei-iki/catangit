@@ -393,7 +393,7 @@ let numArrayRandom3=func3()
   return (
     <>
     <button onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</button>
-    <div>{'資源と色の組み合わせ'}</div>
+    <h1 style={{fontSize:imageSize/6}}>{'資源と色の組み合わせ'}</h1>
     {/* <div>
       <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
       <img src={img1png} width={imageLabelSize}></img>
@@ -461,7 +461,7 @@ let numArrayRandom3=func3()
 <img src={img7png}width={imageLabelSize}></img>
 <img src={img8png}width={imageLabelSize}></img>
     </div> */}
-    <div>陸カタン</div>
+    <h1 style={{fontSize:imageSize/6}}>陸カタン</h1>
     {/* <div>{numArrayRandom}</div>
     <div>{numArrayRandom3}</div> */}
 
@@ -473,7 +473,7 @@ let numArrayRandom3=func3()
 { <rect x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={strokeWidth}/>}
   </>})}
   </svg>
-  <div>海カタン</div>
+  <h1 style={{fontSize:imageSize/6}}>海カタン</h1>
   <svg width={imageSize*8} height={imageSize*7}>
 
   {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}/>

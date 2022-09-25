@@ -434,7 +434,7 @@ let numArrayRandom3=func3()
 
     </div>
     <div>
-    <h2 style={{fontSize:imageLabelSize/10 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
+    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
 
     <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>木Lumber</h2>
 

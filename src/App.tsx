@@ -19,7 +19,15 @@ import img6png from './images/Nothing.png'
 import img7png from './images/sea.png'
 import img8png from './images/Gold.png'
 
+// import styled from '@emotion/styled'
+// const container=`
+// 	display: flex;, /* flexbox */
+// 	flex-wrap: wrap; /* 折返し指定 */
+// `
 
+// const container div {
+// 	width: 25%;
+// }
 import { dirname } from 'path';
 import { arrayBuffer } from 'stream/consumers';
 // console.log('hei')
@@ -70,8 +78,12 @@ const defineSize=(): number=> {
     return 0
   }
 }
+const defineImageLabelSize=(): number=> {
+    return 100+Math.floor(((window.innerWidth)-(100*8))/8)
+}
 const imageSize=defineSize()
 const strokeWidth=imageSize*0.05
+const imageLabelSize=defineImageLabelSize()
 // alert(window.innerWidth)
 // alert(imageSize)
 const haba=[imageSize,imageSize/2,0,imageSize/2,imageSize]
@@ -382,25 +394,73 @@ let numArrayRandom3=func3()
     <>
     <button onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</button>
     <div>{'資源と色の組み合わせ'}</div>
+    {/* <div>
+      <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
+      <img src={img1png} width={imageLabelSize}></img>
+
+      <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>木Lumber</h2>
+    <img src={img2png}width={imageLabelSize}></img>
+    <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>鉄Ore</h2>
+      <img src={img3png}width={imageLabelSize}></img>
+ 
+
+      <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>麦Grain</h2>
+
+      <img src={img4png}width={imageLabelSize}></img>
+      <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>羊Wool</h2>
+
+
+      <img src={img5png}width={imageLabelSize}></img>
+      <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂漠Nothing</h2>
+
+  <img src={img6png}width={imageLabelSize}></img>
+  <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>海Sea</h2>
+
+  <img src={img7png}width={imageLabelSize}></img>
+  <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂金Gold</h2>
+
+  <img src={img8png}width={imageLabelSize}></img>
+    </div> */}
     <div>
-      レンガBrick
-      <img src={img1png}></img>
-
-
-      木Lumber<img src={img2png}></img>
-
-      鉄Ore<img src={img3png}></img>
-
-      麦Grain<img src={img4png}></img>
-
-      羊Wool<img src={img5png}></img>
-
-  砂漠Nothing<img src={img6png}></img>
-  海Sea<img src={img7png}></img>
-  砂金Gold<img src={img8png}></img>
+      <img src={img1png} width={imageLabelSize}></img>
+    <img src={img2png}width={imageLabelSize}></img>
+      <img src={img3png}width={imageLabelSize}></img>
+      <img src={img4png}width={imageLabelSize}></img>
+      <img src={img5png}width={imageLabelSize}></img>
+  <img src={img6png}width={imageLabelSize}></img>
+  <img src={img7png}width={imageLabelSize}></img>
+<img src={img8png}width={imageLabelSize}></img>
 
 
     </div>
+    <div>
+    <h2 style={{fontSize:imageLabelSize/10 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
+
+    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>木Lumber</h2>
+
+    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>鉄Ore</h2>
+
+    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>麦Grain</h2>
+
+    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>羊Wool</h2>
+
+    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂漠Nothing</h2>
+
+  <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>海Sea</h2>
+
+    <h2 style={{fontSize:imageLabelSize/6, inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂金Gold</h2>
+    </div>
+    {/* <div>
+
+      <img src={img1png} width={imageLabelSize}></img>
+<img src={img2png}width={imageLabelSize}></img>
+<img src={img3png}width={imageLabelSize}></img>
+<img src={img4png}width={imageLabelSize}></img>
+<img src={img5png}width={imageLabelSize}></img>
+<img src={img6png}width={imageLabelSize}></img>
+<img src={img7png}width={imageLabelSize}></img>
+<img src={img8png}width={imageLabelSize}></img>
+    </div> */}
     <div>陸カタン</div>
     {/* <div>{numArrayRandom}</div>
     <div>{numArrayRandom3}</div> */}

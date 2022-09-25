@@ -85,6 +85,7 @@ const defineImageLabelSize=(): number=> {
 const imageSize=defineSize()
 const strokeWidth=imageSize*0.05
 const imageLabelSize=defineImageLabelSize()
+const imageLabelFontSize=imageLabelSize/10
 // alert(window.innerWidth)
 // alert(imageSize)
 const haba=[imageSize,imageSize/2,0,imageSize/2,imageSize]
@@ -435,21 +436,21 @@ let numArrayRandom3=func3()
 
     </div>
     <div style={{inlineSize:imageLabelSize*8}}>
-    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
+    <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
 
-    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>木Lumber</h2>
+    <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>木Lumber</h2>
 
-    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>鉄Ore</h2>
+    <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>鉄Ore</h2>
 
-    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>麦Grain</h2>
+    <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>麦Grain</h2>
 
-    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>羊Wool</h2>
+    <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>羊Wool</h2>
 
-    <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂漠Nothing</h2>
+    <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂漠Nothing</h2>
 
-  <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>海Sea</h2>
+  <h2 style={{fontSize:imageLabelFontSize , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>海Sea</h2>
 
-    <h2 style={{fontSize:imageLabelSize/6, inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂金Gold</h2>
+    <h2 style={{fontSize:imageLabelFontSize, inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>砂金Gold</h2>
     </div>
     {/* <div>
 

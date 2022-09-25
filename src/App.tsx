@@ -80,6 +80,7 @@ const defineSize=(): number=> {
 }
 const defineImageLabelSize=(): number=> {
     return 100+Math.floor(((window.innerWidth)-(100*8))/8)
+    return 100+Math.floor(((window.innerWidth)-(100*8))/8)
 }
 const imageSize=defineSize()
 const strokeWidth=imageSize*0.05
@@ -421,7 +422,7 @@ let numArrayRandom3=func3()
 
   <img src={img8png}width={imageLabelSize}></img>
     </div> */}
-    <div>
+    <div style={{inlineSize:imageLabelSize*8}}>
       <img src={img1png} width={imageLabelSize}></img>
     <img src={img2png}width={imageLabelSize}></img>
       <img src={img3png}width={imageLabelSize}></img>
@@ -433,7 +434,7 @@ let numArrayRandom3=func3()
 
 
     </div>
-    <div>
+    <div style={{inlineSize:imageLabelSize*8}}>
     <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>
 
     <h2 style={{fontSize:imageLabelSize/6 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>木Lumber</h2>

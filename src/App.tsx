@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState,useEffect,useRef,useMemo} from 'react'
+import Button from '@mui/material/Button'
+
 import logo from './logo.svg';
 import './App.css';
 import img1 from './images/Brick.svg';//レンガ
@@ -394,7 +396,7 @@ let numArrayRandom3=func3()
   let tobasu3=0
   return (
     <>
-    <button onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</button>
+    <Button variant="contained" onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</Button>
     <h1 style={{fontSize:imageSize/6}}>{'資源と色の組み合わせ'}</h1>
     {/* <div>
       <h2 style={{fontSize:100 , inlineSize:imageLabelSize,wordBreak:'break-all',display:'inline-flex'}}>レンガBrick</h2>

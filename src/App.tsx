@@ -388,7 +388,9 @@ let numArrayRandom3=func3()
   useEffect(()=>{
     let numArrayRandom3=func3()
   },[loop])
-  
+  const [landView,setLandView]=useState(0)
+  const [seaView,setSeaView]=useState(0)
+
   // const sigenRandom3=shuffle(sigen3)
   // console.log(sigenRandm3)
   let tobasu11=0
@@ -396,6 +398,9 @@ let numArrayRandom3=func3()
   let tobasu3=0
   return (
     <>
+    <Button variant='contained' onClick={()=>setLandView((prev)=>prev*(-1)+1)}>陸カタン表示</Button>
+    <Button variant='contained' onClick={()=>setSeaView((prev)=>prev*(-1)+1)}>海カタン表示</Button>
+
     <Button variant="contained" onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</Button>
     <h1 style={{fontSize:imageSize/6}}>{'資源と色の組み合わせ'}</h1>
     {/* <div>
@@ -465,18 +470,16 @@ let numArrayRandom3=func3()
 <img src={img7png}width={imageLabelSize}></img>
 <img src={img8png}width={imageLabelSize}></img>
     </div> */}
-    <h1 style={{fontSize:imageSize/6}}>陸カタン</h1>
-    {/* <div>{numArrayRandom}</div>
-    <div>{numArrayRandom3}</div> */}
+    <div>{landView}</div>
+    {(()=>{if (landView==1) return <><h1 style={{fontSize:imageSize/6}}>陸カタン</h1>
+<svg width={imageSize*5} height={imageSize*5}>
+{sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>
 
-        <svg width={imageSize*5} height={imageSize*5}>
-
-  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>
-
-  {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu11]==6 || numArrayRandom[index+tobasu11]==8){ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}}  >{numArrayRandom[index+tobasu11]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu11]}</text>)}}} else{tobasu11=-1}})()}
+{(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu11]==6 || numArrayRandom[index+tobasu11]==8){ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}}  >{numArrayRandom[index+tobasu11]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu11]}</text>)}}} else{tobasu11=-1}})()}
 { <rect x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={strokeWidth}/>}
-  </>})}
-  </svg>
+</>})}
+</svg></> })()}
+{(()=>{if (seaView==1)return <>
   <h1 style={{fontSize:imageSize/6}}>海カタン</h1>
   <svg width={imageSize*8} height={imageSize*7}>
 
@@ -493,6 +496,34 @@ let numArrayRandom3=func3()
 </>})}
 
 </svg>
+</>})()}
+    {/* <h1 style={{fontSize:imageSize/6}}>陸カタン</h1>
+
+
+        <svg width={imageSize*5} height={imageSize*5}>
+
+  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>
+
+  {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu11]==6 || numArrayRandom[index+tobasu11]==8){ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}}  >{numArrayRandom[index+tobasu11]}</text>)}else{{ return (<text x={Number(sigenCoordinate[index][0])}y={Number(sigenCoordinate[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu11]}</text>)}}} else{tobasu11=-1}})()}
+{ <rect x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={strokeWidth}/>}
+  </>})}
+  </svg> */}
+  {/* <h1 style={{fontSize:imageSize/6}}>海カタン</h1>
+  <svg width={imageSize*8} height={imageSize*7}>
+
+  {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}/>
+  {(()=>{if(sigen!=5) {if(numArrayRandom[index+tobasu12]==6 || numArrayRandom[index+tobasu12]==8){ return (<text x={Number(sigenCoordinate1[index][0])}y={Number(sigenCoordinate1[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}} >{numArrayRandom[index+tobasu12]}</text>)}else{{ return (<text x={Number(sigenCoordinate1[index][0])}y={Number(sigenCoordinate1[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom[index+tobasu12]}</text>)}}} else{tobasu12=-1}})()}
+  { <rect x={sigenCoordinate1[index][0]}y={sigenCoordinate1[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={strokeWidth}/>}
+</>})}
+{sigenRandom2.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate2[index][0]}y={sigenCoordinate2[index][1]}width={imageSize} height={imageSize}/>
+{ <rect x={sigenCoordinate2[index][0]}y={sigenCoordinate2[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={strokeWidth}/>}
+</>})}
+{sigenRandom3.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate3[index][0]}y={sigenCoordinate3[index][1]}width={imageSize} height={imageSize}/>
+{(()=>{if(sigen!=6) {if(numArrayRandom3[index+tobasu3]==6 || numArrayRandom3[index+tobasu3]==8){ return (<text x={Number(sigenCoordinate3[index][0])}y={Number(sigenCoordinate3[index][1])+imageSize*0.9}style={{fill:'red',fontSize:imageSize}} >{numArrayRandom3[index+tobasu3]}</text>)}else{{ return (<text x={Number(sigenCoordinate3[index][0])}y={Number(sigenCoordinate3[index][1])+imageSize*0.9}style={{fill:'black',fontSize:imageSize}} >{numArrayRandom3[index+tobasu3]}</text>)}}} else{tobasu3=-1+tobasu3}})()}
+{ <rect x={sigenCoordinate3[index][0]}y={sigenCoordinate3[index][1]}width={imageSize} height={imageSize}fill='none' stroke="black" stroke-width={strokeWidth}/>}
+</>})}
+
+</svg> */}
     </>
   );
 }

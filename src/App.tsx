@@ -390,7 +390,28 @@ let numArrayRandom3=func3()
   },[loop])
   const [landView,setLandView]=useState(0)
   const [seaView,setSeaView]=useState(0)
-
+  const [landButtonText,setLandButtonText]=useState('陸カタン表示')
+  const [seaButtonText,setSeaButtonText]=useState('海カタン表示')
+  const onClickViewButton=(e:React.MouseEvent)=>{
+    if(e.currentTarget.getAttribute('data-item')=='land'){
+      setLandView((prev)=>prev*(-1)+1)
+      if(landView==0){
+        setLandButtonText(()=>'陸カタン非表示')
+      }
+      else if(landView==1){
+        setLandButtonText(()=>'陸カタン表示')
+      }
+    }
+    else if(e.currentTarget.getAttribute('data-item')=='sea'){
+      setSeaView((prev)=>prev*(-1)+1)
+      if(seaView==0){
+        setSeaButtonText(()=>'海カタン非表示')
+      }
+      else if(seaView==1){
+        setSeaButtonText(()=>'海カタン表示')
+      }
+    }
+  }
   // const sigenRandom3=shuffle(sigen3)
   // console.log(sigenRandm3)
   let tobasu11=0
@@ -398,8 +419,10 @@ let numArrayRandom3=func3()
   let tobasu3=0
   return (
     <>
-    <Button variant='contained' onClick={()=>setLandView((prev)=>prev*(-1)+1)}>陸カタン表示</Button>
-    <Button variant='contained' onClick={()=>setSeaView((prev)=>prev*(-1)+1)}>海カタン表示</Button>
+    {/* <Button variant='contained' onClick={()=>setLandView((prev)=>prev*(-1)+1)}data-item={'land'}>{landButtonText}</Button>
+    <Button variant='contained' onClick={()=>setSeaView((prev)=>prev*(-1)+1)} data-item={'sea'}>{seaButtonText}</Button> */}
+        <Button variant='contained' onClick={(onClickViewButton)}data-item={'land'}>{landButtonText}</Button>
+    <Button variant='contained' onClick={(onClickViewButton)} data-item={'sea'}>{seaButtonText}</Button>
 
     <Button variant="contained" onClick={()=>setLoop((prev)=>prev+1)}>数字だけ変更</Button>
     <h1 style={{fontSize:imageSize/6}}>{'資源と色の組み合わせ'}</h1>
@@ -470,7 +493,7 @@ let numArrayRandom3=func3()
 <img src={img7png}width={imageLabelSize}></img>
 <img src={img8png}width={imageLabelSize}></img>
     </div> */}
-    <div>{landView}</div>
+    {/* <div>{landView}</div> */}
     {(()=>{if (landView==1) return <><h1 style={{fontSize:imageSize/6}}>陸カタン</h1>
 <svg width={imageSize*5} height={imageSize*5}>
 {sigenRandom.map((sigen,index)=>{return <><image xlinkHref={svgList[sigen]} x={sigenCoordinate[index][0]}y={sigenCoordinate[index][1]}width={imageSize} height={imageSize}/>

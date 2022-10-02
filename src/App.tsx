@@ -92,7 +92,7 @@ const defineImageLabelSize = (): number => {
     return 100 + Math.floor(((window.innerWidth) - (100 * 8)) / 8)
   }
   else if (window.innerHeight < window.innerWidth) {//PCのとき
-    return 100 + Math.floor(((window.innerHeight) - (100 * 9)) / 9)
+    return (100 + Math.floor(((window.innerHeight) - (100 * 9)) / 9)) / 1.2
   }
   else {
     return 0
@@ -100,7 +100,7 @@ const defineImageLabelSize = (): number => {
 }
 const imageSize = defineSize()
 const strokeWidth = imageSize * 0.05
-const imageLabelSize = defineImageLabelSize() / 1.1
+const imageLabelSize = defineImageLabelSize()
 const imageLabelFontSize = imageLabelSize / 10
 // alert(window.innerWidth)
 // alert(imageSize)

@@ -25,6 +25,7 @@ import img5png from './images/Wool.png'
 import img6png from './images/Nothing.png'
 import img7png from './images/sea.png'
 import img8png from './images/Gold.png'
+// const imgList = [img1, img2, img3, img4, img5, img6, img7, img8]
 
 // import styled from '@emotion/styled'
 // const container=`
@@ -38,6 +39,7 @@ import img8png from './images/Gold.png'
 import { dirname } from 'path';
 import { arrayBuffer } from 'stream/consumers';
 // console.log('hei')
+const imgListPng = [img1png, img2png, img3png, img4png, img5png, img6png, img7png, img8png]
 const svgList = [img1, img2, img3, img4, img5, img6, img7, img8]
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -568,7 +570,8 @@ export const App = () => {
             <Button variant='contained' onClick={(onClickViewButton)} data-item={'land'}>{landButtonText}</Button>
             <Button variant='contained' onClick={(onClickViewButton)} data-item={'sea'}>{seaButtonText}</Button>
 
-            <Button variant="contained" onClick={() => setLoop((prev) => prev + 1)}>数字だけ変更</Button><div style={{ inlineSize: imageLabelSize * 8 }}>
+            <Button variant="contained" onClick={() => setLoop((prev) => prev + 1)}>数字だけ変更</Button>
+            {/* <div style={{ inlineSize: imageLabelSize * 8 }}>
               <img src={img1png} width={imageLabelSize}></img>
               <img src={img2png} width={imageLabelSize}></img>
               <img src={img3png} width={imageLabelSize}></img>
@@ -577,6 +580,9 @@ export const App = () => {
               <img src={img6png} width={imageLabelSize}></img>
               <img src={img7png} width={imageLabelSize}></img>
               <img src={img8png} width={imageLabelSize}></img>
+            </div> */}
+            <div style={{ inlineSize: imageLabelSize * 8 }}>
+              {imgListPng.map((png) => { return (<img src={png} width={imageLabelSize}></img>) })}
             </div>
             <div style={{ inlineSize: imageLabelSize * 8 }}>
               <h2 style={{ fontSize: imageLabelFontSize, inlineSize: imageLabelSize, wordBreak: 'break-all', display: 'inline-flex' }}>レンガBrick</h2>

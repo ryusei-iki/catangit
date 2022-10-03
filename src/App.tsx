@@ -41,6 +41,8 @@ import { arrayBuffer } from 'stream/consumers';
 // console.log('hei')
 const imgListPng = [img1png, img2png, img3png, img4png, img5png, img6png, img7png, img8png]
 const svgList = [img1, img2, img3, img4, img5, img6, img7, img8]
+const sigenNameList = ['レンガBrick', '木Lumber', '鉄Ore', '麦Grain', '羊Wool', '砂漠Nothing', '海Sea', '砂金Gold']
+
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -571,20 +573,10 @@ export const App = () => {
             <Button variant='contained' onClick={(onClickViewButton)} data-item={'sea'}>{seaButtonText}</Button>
 
             <Button variant="contained" onClick={() => setLoop((prev) => prev + 1)}>数字だけ変更</Button>
-            {/* <div style={{ inlineSize: imageLabelSize * 8 }}>
-              <img src={img1png} width={imageLabelSize}></img>
-              <img src={img2png} width={imageLabelSize}></img>
-              <img src={img3png} width={imageLabelSize}></img>
-              <img src={img4png} width={imageLabelSize}></img>
-              <img src={img5png} width={imageLabelSize}></img>
-              <img src={img6png} width={imageLabelSize}></img>
-              <img src={img7png} width={imageLabelSize}></img>
-              <img src={img8png} width={imageLabelSize}></img>
-            </div> */}
             <div style={{ inlineSize: imageLabelSize * 8 }}>
               {imgListPng.map((png) => { return (<img src={png} width={imageLabelSize}></img>) })}
             </div>
-            <div style={{ inlineSize: imageLabelSize * 8 }}>
+            {/* <div style={{ inlineSize: imageLabelSize * 8 }}>
               <h2 style={{ fontSize: imageLabelFontSize, inlineSize: imageLabelSize, wordBreak: 'break-all', display: 'inline-flex' }}>レンガBrick</h2>
 
               <h2 style={{ fontSize: imageLabelFontSize, inlineSize: imageLabelSize, wordBreak: 'break-all', display: 'inline-flex' }}>木Lumber</h2>
@@ -600,6 +592,9 @@ export const App = () => {
               <h2 style={{ fontSize: imageLabelFontSize, inlineSize: imageLabelSize, wordBreak: 'break-all', display: 'inline-flex' }}>海Sea</h2>
 
               <h2 style={{ fontSize: imageLabelFontSize, inlineSize: imageLabelSize, wordBreak: 'break-all', display: 'inline-flex' }}>砂金Gold</h2>
+            </div> */}
+            <div style={{ inlineSize: imageLabelSize * 8 }}>
+              {sigenNameList.map((name) => { return (<h2 style={{ fontSize: imageLabelFontSize, inlineSize: imageLabelSize, wordBreak: 'break-all', display: 'inline-flex' }}>{name}</h2>) })}
             </div>
             {
               (() => {
